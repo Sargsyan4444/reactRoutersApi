@@ -1,16 +1,24 @@
 import { Link } from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+
 
 function Header() {
     return(
-        <header className="flex justify-between items-center p-8">
-            <div className="logo">
-                <img className="w-[80px] h-[80px] object-contain" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2022/06/Starbucks_Corporation_Logo_2011.svg-e1657703028844.png?auto=format&q=60&fit=max&w=930" alt="logo" />
+        <header className="bg-[#fff] w-full font-montserrat">
+            <div className="flex justify-between items-center py-1 px-10 max-w-[1440px] my-0 mx-auto">
+                <div className="logo">
+                    <img className="w-[80px] h-[80px] object-contain" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/The_Fresh_Market_logo.svg/2048px-The_Fresh_Market_logo.svg.png" alt="logo" />
+                </div>
+                <nav className="hidden gap-3 sm:flex">
+                    <li className="list-none"><Link to='/' className="text-[#7CFC00] font-montserrat font-bold">Home</Link></li>
+                    <li className="list-none"><Link to='/shop' className="text-[#7CFC00] font-montserrat font-bold">Shop</Link></li>
+                    <li className="list-none"><Link to='/aboutus' className="text-[#7CFC00] font-montserrat font-bold">About Us</Link></li>
+                </nav>
+                <FontAwesomeIcon icon={faBars} className="text-[#7CFC00] text-2xl sm:hidden" />   
+                <FontAwesomeIcon icon={faCartShopping} className="text-[#7CFC00] text-2xl" />
             </div>
-            <nav className="flex gap-3">
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/shop'>Shop</Link></li>
-                <li><Link to='/aboutus'>About Us</Link></li>
-            </nav>
         </header>
     )
 }
